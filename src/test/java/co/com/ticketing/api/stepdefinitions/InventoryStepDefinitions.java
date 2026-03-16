@@ -8,9 +8,12 @@ import io.cucumber.java.DataTableType;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
+import net.serenitybdd.model.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import net.serenitybdd.rest.SerenityRest;
+import net.thucydides.model.util.EnvironmentVariables;
+import net.thucydides.model.environment.SystemEnvironmentVariables;
 
 import java.util.Map;
 
@@ -22,11 +25,18 @@ public class InventoryStepDefinitions {
 
     private Actor actor;
     private String lastReservationId;
+    private EnvironmentVariables environmentVariables;
 
     @Before
     public void setup() {
         actor = Actor.named("Sistema");
-        actor.can(CallAnApi.at("http://localhost:5002"));
+        environmentVariables = SystemEnvironmentVariables.createEnvironmentVariables();
+        String baseUrl = EnvironmentSpecificConfiguration.from(environmentVariables)
+                .getProperty("restapi.inventory.base.url");
+        
+        if (baseUrl == null) baseUrl = "http://localhost:50002";
+        
+        actor.can(CallAnApi.at(baseUrl));
     }
 
     @DataTableType

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class Gestión de Reservas en el Inventario</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class Gestión de Reservas en el Inventario</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; Gestión de Reservas en el Inventario</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">4.608s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="Flujo completo de creación y consulta de reserva de asiento"></a>
+<h3 class="failures">Flujo completo de creación y consulta de reserva de asiento</h3>
+<span class="code">
+<pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;201&gt; but was &lt;404&gt;.
+
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:397)
+	at co.com.ticketing.api.stepdefinitions.InventoryStepDefinitions.elCodigoDeRespuestaDebeSer(InventoryStepDefinitions.java:66)
+	at ✽.el código de respuesta debe ser 201(file:///home/jostin-alvarado/dev/AUTO_API_SCREENPLAY/src/test/resources/features/inventory/inventory_crud.feature:14)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">Flujo completo de creación y consulta de reserva de asiento</td>
+<td class="failures">4.608s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>[Test worker] INFO  - 
+  _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
+ |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
+   | |   | _|  \__ \   | |     \__ \   | |    / _ \  |   /   | |   | _|  | |) |
+   |_|   |___| |___/   |_|     |___/   |_|   /_/ \_\ |_|_\   |_|   |___| |___/ 
+
+Flujo completo de creación y consulta de reserva de asiento(gestión-de-reservas-en-el-inventario;flujo-completo-de-creación-y-consulta-de-reserva-de-asiento)
+--------------------------------------------------------------------------------
+[Test worker] INFO  - ?[92m|-- Dado que el &quot;Sistema&quot; tiene acceso a la API de Inventario?[0m
+[Test worker] INFO  - ?[92m|-- Cuando realiza una reserva para:
+| eventId | seatId | customerId |
+| 550e8400-e29b-41d4-a716-446655440000 | 660e8400-e29b-41d4-a716-446655440001 | 770e8400-e29b-41d4-a716-446655440002 |?[0m
+[Test worker] INFO  - ?[92m|---- Sistema crea una reserva para el evento ReservationRequest(eventId=550e8400-e29b-41d4-a716-446655440000, seatId=660e8400-e29b-41d4-a716-446655440001, customerId=770e8400-e29b-41d4-a716-446655440002).eventId?[0m
+[Test worker] INFO  - ?[92m|------ Sistema executes a POST on the resource /reservations?[0m
+[Test worker] INFO  - ?[92m|-- Entonces el código de respuesta debe ser 201?[0m
+[Test worker] INFO  - ?[92m|---- El c&amp;oacute;digo de respuesta es correcto?[0m
+[Test worker] INFO  - ?[91mSTEP FAILURE: java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;201&gt; but was &lt;404&gt;.
+?[0m
+[Test worker] INFO  - ?[91mSTEP FAILURE: java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;201&gt; but was &lt;404&gt;.
+?[0m
+[Test worker] INFO  - ?[92m|------ Y la respuesta debe contener un &quot;reservationId&quot; válido?[0m
+[Test worker] INFO  - ?[33m      -&gt; STEP IGNORED?[0m
+[Test worker] INFO  - ?[92m|------ Cuando consulta la reserva por su ID?[0m
+[Test worker] INFO  - ?[33m      -&gt; STEP IGNORED?[0m
+[Test worker] INFO  - ?[92m|------ Entonces el código de respuesta debe ser 200?[0m
+[Test worker] INFO  - ?[33m      -&gt; STEP IGNORED?[0m
+[Test worker] INFO  - ?[92m|------ Y la reserva debe tener el estado &quot;active&quot;?[0m
+[Test worker] INFO  - ?[33m      -&gt; STEP IGNORED?[0m
+[Test worker] ERROR  - ?[91m
+  _____   ___   ___   _____     ___     _     ___   _      ___   ___  
+ |_   _| | __| / __| |_   _|   | __|   /_\   |_ _| | |    | __| |   \ 
+   | |   | _|  \__ \   | |     | _|   / _ \   | |  | |__  | _|  | |) |
+   |_|   |___| |___/   |_|     |_|   /_/ \_\ |___| |____| |___| |___/ 
+
+Flujo completo de creación y consulta de reserva de asiento
+-----------------------------------------------------------------------?[0m
+[Test worker] ERROR  - ?[91m    Test failed at step: El código de respuesta es correcto?[0m
+[Test worker] ERROR  - ?[91m    1 expectation failed.Expected status code &lt;201&gt; but was &lt;404&gt;.?[0m
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.5</a> at 16 mar 2026 12:07:04</p>
+</div>
+</div>
+</body>
+</html>
