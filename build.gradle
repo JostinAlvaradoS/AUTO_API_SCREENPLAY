@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '4.0.15'
+}
+
+defaultTasks 'clean', 'test', 'aggregate'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.serenity-bdd:serenity-core:4.0.15'
+    implementation 'net.serenity-bdd:serenity-junit5:4.0.15'
+    implementation 'net.serenity-bdd:serenity-screenplay:4.0.15'
+    implementation 'net.serenity-bdd:serenity-screenplay-rest:4.0.15'
+    implementation 'net.serenity-bdd:serenity-cucumber:4.0.15'
+    implementation 'io.rest-assured:rest-assured:5.3.2'
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.10.1'
+    implementation 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
+}
+
+test {
+    useJUnitPlatform()
+}
