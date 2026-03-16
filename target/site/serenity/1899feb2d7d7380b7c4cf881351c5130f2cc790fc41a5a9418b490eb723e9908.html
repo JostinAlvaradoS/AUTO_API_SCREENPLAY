@@ -149,7 +149,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 16-03-2026 12:07</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 16-03-2026 12:46</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -299,7 +299,7 @@
                     </td>
 
                     <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                    <td width="100"><span class="top-level-step">062ms</span></td>
+                    <td width="100"><span class="top-level-step">061ms</span></td>
                 </tr>
                 <tr class="test-SUCCESS">
 
@@ -317,7 +317,7 @@
                             <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
                                style="display:block;">
                                 <span class="top-level-step">
-                                                Cuando realiza una reserva para:<br><table class='embedded'><thead><th>eventId</th><th>seatId</th><th>customerId</th></thead><tbody><tr><td>550e8400-e29b-41d4-a716-446655440000</td><td>660e8400-e29b-41d4-a716-446655440001</td><td>770e8400-e29b-41d4-a716-446655440002</td></tr></tbody></table>
+                                                Cuando realiza una reserva para:<br><table class='embedded'><thead><th>eventId</th><th>seatId</th><th>customerId</th></thead><tbody><tr><td>11111111-1111-1111-1111-111111111111</td><td>53c62727-a1ae-3700-b0b9-50a196733f22</td><td>770e8400-e29b-41d4-a716-446655440002</td></tr></tbody></table>
                                         </span>
                             </a>
                             <span class="evidence">
@@ -326,7 +326,7 @@
                     </td>
 
                     <td width="130"><span class="top-level-step">SUCCESS</span></td>
-                    <td width="100"><span class="top-level-step">3s 931ms</span></td>
+                    <td width="100"><span class="top-level-step">4s 294ms</span></td>
                 </tr>
                     <tr>
                         <td colspan="5">
@@ -347,7 +347,7 @@
                             <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1-0')"
                                style="display:block;">
                                 <span class="nested-step">
-                                                Sistema crea una reserva para el evento ReservationRequest(eventId=550e8400-e29b-41d4-a716-446655440000, seatId=660e8400-e29b-41d4-a716-446655440001, customerId=770e8400-e29b-41d4-a716-446655440002).eventId
+                                                Sistema crea una reserva para el evento ReservationRequest(eventId=11111111-1111-1111-1111-111111111111, seatId=53c62727-a1ae-3700-b0b9-50a196733f22, customerId=770e8400-e29b-41d4-a716-446655440002).eventId
                                         </span>
                             </a>
                             <span class="evidence">
@@ -356,7 +356,7 @@
                     </td>
 
                     <td width="130"><span class="nested-step">SUCCESS</span></td>
-                    <td width="100"><span class="nested-step">3s 104ms</span></td>
+                    <td width="100"><span class="nested-step">3s 325ms</span></td>
                 </tr>
                     <tr>
                         <td colspan="5">
@@ -386,7 +386,7 @@
                     </td>
 
                     <td width="130"><span class="nested-step">SUCCESS</span></td>
-                    <td width="100"><span class="nested-step">2s 997ms</span></td>
+                    <td width="100"><span class="nested-step">3s 217ms</span></td>
                 </tr>
                     <tr>
                         <td colspan="5">
@@ -420,16 +420,16 @@
                             <div class="card-body">
                                 <h4>Response</h4>
                                     <p>URL: http://localhost:50002/reservations</p>
-                                    <p>Status code: 404</p>
+                                    <p>Status code: 409</p>
                                     <p>Content Type: application/json</p>
                                     <h4>Request Headers</h4>
                                     <pre>Accept=*/*<br>Content-Type=application/json</pre>
                                     <h4>Content Body</h4>
-                                    <pre>{<br>    &quot;eventId&quot;: &quot;550e8400-e29b-41d4-a716-446655440000&quot;,<br>    &quot;seatId&quot;: &quot;660e8400-e29b-41d4-a716-446655440001&quot;,<br>    &quot;customerId&quot;: &quot;770e8400-e29b-41d4-a716-446655440002&quot;<br>}</pre>
+                                    <pre>{<br>    &quot;eventId&quot;: &quot;11111111-1111-1111-1111-111111111111&quot;,<br>    &quot;seatId&quot;: &quot;53c62727-a1ae-3700-b0b9-50a196733f22&quot;,<br>    &quot;customerId&quot;: &quot;770e8400-e29b-41d4-a716-446655440002&quot;<br>}</pre>
                                     <h4>Response Headers</h4>
-                                    <pre>Content-Type: application/json; charset=utf-8<br>Date: Mon, 16 Mar 2026 17:07:03 GMT<br>Server: Kestrel<br>Transfer-Encoding: chunked</pre>
+                                    <pre>Content-Type: application/json; charset=utf-8<br>Date: Mon, 16 Mar 2026 17:46:09 GMT<br>Server: Kestrel<br>Transfer-Encoding: chunked</pre>
                                 <h4>Response Body</h4>
-                                    <pre>{<br>    &quot;error&quot;: &quot;Seat 660e8400-e29b-41d4-a716-446655440001 not found&quot;<br>}</pre>
+                                    <pre>{<br>    &quot;error&quot;: &quot;Seat 53c62727-a1ae-3700-b0b9-50a196733f22 is already reserved&quot;<br>}</pre>
                             </div>
                         </div>
                     </div>
@@ -479,7 +479,7 @@
                     </td>
 
                     <td width="130"><span class="top-level-step">FAILURE</span></td>
-                    <td width="100"><span class="top-level-step">182ms</span></td>
+                    <td width="100"><span class="top-level-step">196ms</span></td>
                 </tr>
                     <tr>
                         <td colspan="5">
@@ -504,7 +504,7 @@
                     </td>
 
                     <td width="130"><span class="nested-group-step">FAILURE</span></td>
-                    <td width="100"><span class="nested-group-step">055ms</span></td>
+                    <td width="100"><span class="nested-group-step">054ms</span></td>
                 </tr>
                     <tr class="test-FAILURE">
                         <td width="40">&nbsp</td>
@@ -515,7 +515,7 @@
         <div class="table">
             <div class="row">
                 <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
-                    <span class="error-message error-message-title">java.lang.AssertionError: 1 expectation failed.<br>Expected status code &lt;201&gt; but was &lt;404&gt;.<br></span>
+                    <span class="error-message error-message-title">java.lang.AssertionError: 1 expectation failed.<br>Expected status code &lt;201&gt; but was &lt;409&gt;.<br></span>
                 </div>
                 <div class="col-sm-2">
                     <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-7"
@@ -568,7 +568,7 @@
                     </td>
 
                     <td width="130"><span class="top-level-step">SKIPPED</span></td>
-                    <td width="100"><span class="top-level-step">021ms</span></td>
+                    <td width="100"><span class="top-level-step">006ms</span></td>
                 </tr>
                 <tr class="test-SKIPPED">
 
@@ -590,7 +590,7 @@
                     </td>
 
                     <td width="130"><span class="top-level-step">SKIPPED</span></td>
-                    <td width="100"><span class="top-level-step">008ms</span></td>
+                    <td width="100"><span class="top-level-step">013ms</span></td>
                 </tr>
                 <tr class="test-SKIPPED">
 
@@ -612,7 +612,7 @@
                     </td>
 
                     <td width="130"><span class="top-level-step">SKIPPED</span></td>
-                    <td width="100"><span class="top-level-step">007ms</span></td>
+                    <td width="100"><span class="top-level-step">008ms</span></td>
                 </tr>
                 <tr class="test-SKIPPED">
 
@@ -634,7 +634,7 @@
                     </td>
 
                     <td width="130"><span class="top-level-step">SKIPPED</span></td>
-                    <td width="100"><span class="top-level-step">005ms</span></td>
+                    <td width="100"><span class="top-level-step">012ms</span></td>
                 </tr>
             <tr class="test-FAILURE">
                     <td colspan="2"></td>

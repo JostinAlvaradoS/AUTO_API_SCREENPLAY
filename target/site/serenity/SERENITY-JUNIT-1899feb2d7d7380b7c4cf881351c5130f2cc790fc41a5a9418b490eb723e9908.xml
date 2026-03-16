@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Gestión de Reservas en el Inventario" skipped="0" tests="1" time="0.14" timestamp="2026-03-16 12:07:00"><testcase name="Flujo completo de creación y consulta de reserva de asiento"><failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
-Expected status code &lt;201&gt; but was &lt;404&gt;.
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Gestión de Reservas en el Inventario" skipped="0" tests="1" time="0.14" timestamp="2026-03-16 12:46:06"><testcase name="Flujo completo de creación y consulta de reserva de asiento"><failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;409&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;201&gt; but was &lt;409&gt;.
 </failure><system-err>1 expectation failed.
-Expected status code &lt;201&gt; but was &lt;404&gt;.
+Expected status code &lt;201&gt; but was &lt;409&gt;.
 
 io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
 io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)

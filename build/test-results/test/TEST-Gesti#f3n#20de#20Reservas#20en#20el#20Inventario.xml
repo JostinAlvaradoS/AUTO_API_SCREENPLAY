@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Gestión de Reservas en el Inventario" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-03-16T17:07:00" hostname="psofkaec082.sofka.local" time="4.608">
+<testsuite name="Gestión de Reservas en el Inventario" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-03-16T17:46:06" hostname="psofkaec082.sofka.local" time="5.005">
   <properties/>
-  <testcase name="Flujo completo de creación y consulta de reserva de asiento" classname="Gestión de Reservas en el Inventario" time="4.608">
-    <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;404&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;201&gt; but was &lt;404&gt;.
+  <testcase name="Flujo completo de creación y consulta de reserva de asiento" classname="Gestión de Reservas en el Inventario" time="5.005">
+    <failure message="java.lang.AssertionError: 1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;409&gt;.&#10;" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;201&gt; but was &lt;409&gt;.
 
 	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:38)
 	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
@@ -24,16 +24,16 @@ Flujo completo de creación y consulta de reserva de asiento(gestión-de-reserva
 [Test worker] INFO  - ?[92m|-- Dado que el "Sistema" tiene acceso a la API de Inventario?[0m
 [Test worker] INFO  - ?[92m|-- Cuando realiza una reserva para:
 | eventId | seatId | customerId |
-| 550e8400-e29b-41d4-a716-446655440000 | 660e8400-e29b-41d4-a716-446655440001 | 770e8400-e29b-41d4-a716-446655440002 |?[0m
-[Test worker] INFO  - ?[92m|---- Sistema crea una reserva para el evento ReservationRequest(eventId=550e8400-e29b-41d4-a716-446655440000, seatId=660e8400-e29b-41d4-a716-446655440001, customerId=770e8400-e29b-41d4-a716-446655440002).eventId?[0m
+| 11111111-1111-1111-1111-111111111111 | 53c62727-a1ae-3700-b0b9-50a196733f22 | 770e8400-e29b-41d4-a716-446655440002 |?[0m
+[Test worker] INFO  - ?[92m|---- Sistema crea una reserva para el evento ReservationRequest(eventId=11111111-1111-1111-1111-111111111111, seatId=53c62727-a1ae-3700-b0b9-50a196733f22, customerId=770e8400-e29b-41d4-a716-446655440002).eventId?[0m
 [Test worker] INFO  - ?[92m|------ Sistema executes a POST on the resource /reservations?[0m
 [Test worker] INFO  - ?[92m|-- Entonces el código de respuesta debe ser 201?[0m
 [Test worker] INFO  - ?[92m|---- El c&oacute;digo de respuesta es correcto?[0m
 [Test worker] INFO  - ?[91mSTEP FAILURE: java.lang.AssertionError: 1 expectation failed.
-Expected status code <201> but was <404>.
+Expected status code <201> but was <409>.
 ?[0m
 [Test worker] INFO  - ?[91mSTEP FAILURE: java.lang.AssertionError: 1 expectation failed.
-Expected status code <201> but was <404>.
+Expected status code <201> but was <409>.
 ?[0m
 [Test worker] INFO  - ?[92m|------ Y la respuesta debe contener un "reservationId" válido?[0m
 [Test worker] INFO  - ?[33m      -> STEP IGNORED?[0m
@@ -52,6 +52,6 @@ Expected status code <201> but was <404>.
 Flujo completo de creación y consulta de reserva de asiento
 -----------------------------------------------------------------------?[0m
 [Test worker] ERROR  - ?[91m    Test failed at step: El código de respuesta es correcto?[0m
-[Test worker] ERROR  - ?[91m    1 expectation failed.Expected status code <201> but was <404>.?[0m
+[Test worker] ERROR  - ?[91m    1 expectation failed.Expected status code <201> but was <409>.?[0m
 ]]></system-err>
 </testsuite>
