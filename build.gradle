@@ -16,6 +16,7 @@ ext {
 
 dependencies {
     implementation "net.serenity-bdd:serenity-core:${serenity_version}"
+    // Use the stable Serenity Cucumber adapter
     implementation "net.serenity-bdd:serenity-cucumber:${serenity_version}"
     implementation "net.serenity-bdd:serenity-screenplay:${serenity_version}"
     implementation "net.serenity-bdd:serenity-screenplay-rest:${serenity_version}"

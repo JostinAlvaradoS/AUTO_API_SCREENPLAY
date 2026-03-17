@@ -17,7 +17,7 @@ import org.junit.platform.suite.api.Suite;
 )
 @ConfigurationParameter(
         key = Constants.PLUGIN_PROPERTY_NAME,
-        value = "pretty"
+        value = "pretty,io.cucumber.core.plugin.SerenityReporter"
 )
 public class EventRunner {
 }
