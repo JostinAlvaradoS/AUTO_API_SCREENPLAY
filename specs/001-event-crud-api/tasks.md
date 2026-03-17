@@ -17,12 +17,12 @@
 
 **Purpose**: Project initialization and basic structure for Serenity Screenplay.
 
-- [x] T001 Configure Serenity BDD, Screenplay Rest, and `serenity-rest-json-schema-validator` dependencies in `build.gradle`
-- [x] T002 Configure base URL `http://localhost:50001` in `src/test/resources/serenity.conf`
-- [x] T003 [P] Create `EventRequest` POJO with Builder pattern in `src/main/java/com/sofka/automation/models/EventRequest.java`
-- [x] T004 [P] Create `EventResponse` POJO for deserialization in `src/main/java/com/sofka/automation/models/EventResponse.java`
-- [x] T005 [P] Create `Endpoints` utility class in `src/main/java/com/sofka/automation/utils/Endpoints.java`
-- [x] T006 [P] Store Event JSON Schemas in `src/test/resources/schemas/event-response-schema.json`
+- [X] T001 Configure Serenity BDD, Screenplay Rest, and `serenity-rest-json-schema-validator` dependencies in `build.gradle`
+- [X] T002 Configure base URL `http://localhost:50001` in `src/test/resources/serenity.conf`
+- [X] T003 [P] Create `EventRequest` POJO with Builder pattern in `src/main/java/com/sofka/automation/models/EventRequest.java`
+- [X] T004 [P] Create `EventResponse` POJO for deserialization in `src/main/java/com/sofka/automation/models/EventResponse.java`
+- [X] T005 [P] Create `Endpoints` utility class in `src/main/java/com/sofka/automation/utils/Endpoints.java`
+- [X] T006 [P] Store Event JSON Schemas in `src/test/resources/schemas/event-response-schema.json`
 
 ---
 
@@ -30,8 +30,8 @@
 
 **Purpose**: Core infrastructure for "The System" Actor and abilities.
 
-- [x] T007 Implement Actor initialization hook (The System) with `CallAnApi` ability in `src/test/java/com/sofka/automation/stepdefinitions/Hooks.java`
-- [x] T008 Implement utility for Serenity Session management to store `eventId` in `src/main/java/com/sofka/automation/utils/SessionManager.java`
+- [X] T007 Implement Actor initialization hook (The System) with `CallAnApi` ability in `src/test/java/com/sofka/automation/stepdefinitions/Hooks.java`
+- [X] T008 Implement utility for Serenity Session management to store `eventId` in `src/main/java/com/sofka/automation/utils/SessionManager.java`
 
 **Checkpoint**: Foundation ready - Actor can now perform REST interactions.
 
@@ -45,11 +45,11 @@
 
 ### Implementation for User Story 1
 
-- [x] T009 [US1] Create `PostEvent` Task in `src/main/java/com/sofka/automation/tasks/PostEvent.java`
-- [x] T010 [US1] Create `TheEventSchema` Question for contract validation in `src/main/java/com/sofka/automation/questions/TheEventSchema.java`
-- [ ] T011 [US1] Create `TheEventResponseState` Question in `src/main/java/com/sofka/automation/questions/TheEventResponseState.java`
-- [x] T012 [US1] Implement Step Definitions for "Creación exitosa de un evento básico" in `src/test/java/com/sofka/automation/stepdefinitions/EventStepDefinitions.java` (using `shared-specs` features)
-- [ ] T013 [US1] Add validation for 400 Bad Request flows (mandatory fields/past dates) per `spec.md`
+- [X] T009 [US1] Create `PostEvent` Task in `src/main/java/com/sofka/automation/tasks/PostEvent.java`
+- [X] T010 [US1] Create `TheEventSchema` Question for contract validation in `src/main/java/com/sofka/automation/questions/TheEventSchema.java`
+- [X] T011 [US1] Create `TheEventResponseState` Question in `src/main/java/com/sofka/automation/questions/TheEventResponseState.java`
+- [X] T012 [US1] Implement Step Definitions for "Creación exitosa de un evento básico" in `src/test/java/com/sofka/automation/stepdefinitions/EventStepDefinitions.java` (using `shared-specs` features)
+- [X] T013 [US1] Add validation for 400 Bad Request flows (mandatory fields/past dates) per `spec.md`
 
 **Checkpoint**: User Story 1 (POST) functional, with contract validation.
 
@@ -63,10 +63,10 @@
 
 ### Implementation for User Story 2
 
-- [ ] T014 [US2] Create `GetEvent` Task in `src/main/java/com/sofka/automation/tasks/GetEvent.java`
-- [ ] T015 [US2] Create `GetEventsList` Task in `src/main/java/com/sofka/automation/tasks/GetEventsList.java`
-- [ ] T016 [US2] Implement Questions to verify response body matches `EventResponse` fields and schema
-- [ ] T017 [US2] Implement Step Definitions for retrieval logic using session `eventId`
+- [X] T014 [US2] Create `GetEvent` Task in `src/main/java/com/sofka/automation/tasks/GetEvent.java`
+- [X] T015 [US2] Create `GetEventsList` Task in `src/main/java/com/sofka/automation/tasks/GetEventsList.java`
+- [X] T016 [US2] Implement Questions to verify response body matches `EventResponse` fields and schema
+- [X] T017 [US2] Implement Step Definitions for retrieval logic using session `eventId`
 
 ---
 
@@ -78,9 +78,9 @@
 
 ### Implementation for User Story 3
 
-- [ ] T018 [US3] Create `PutEvent` Task in `src/main/java/com/sofka/automation/tasks/PutEvent.java`
-- [ ] T019 [US3] Implement Step Definitions for update logic and field verification
-- [ ] T020 [US3] Add validation for business rule: restricted fields when reservations exist
+- [X] T018 [US3] Create `PutEvent` Task in `src/main/java/com/sofka/automation/tasks/PutEvent.java`
+- [X] T019 [US3] Implement Step Definitions for update logic and field verification
+- [X] T020 [US3] Add validation for business rule: restricted fields when reservations exist
 
 ---
 
@@ -92,11 +92,12 @@
 
 ### Implementation for User Story 4
 
-- [ ] T021 [US4] Create `DeactivateEvent` Task in `src/main/java/com/sofka/automation/tasks/DeactivateEvent.java`
-- [ ] T022 [US4] Implement Step Definitions for deactivation and public list exclusion check
-- [ ] T023 [US4] Verify event is no longer returned in public `GET /Events` list
+- [X] T021 [US4] Create `DeactivateEvent` Task in `src/main/java/com/sofka/automation/tasks/DeactivateEvent.java`
+- [X] T022 [US4] Implement Step Definitions for deactivation and public list exclusion check
+- [X] T023 [US4] Verify event is no longer returned in public `GET /Events` list
 
 ---
+
 
 ## Phase 7: Polish & Cross-Cutting Concerns
 

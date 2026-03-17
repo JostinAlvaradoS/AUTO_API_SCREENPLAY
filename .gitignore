@@ -1,0 +1,16 @@
+target/
+build/
+.gradle/
+.idea/
+*.iml
+*.log
+.settings/
+.classpath
+.project
+out/
+.DS_Store
+serenity.properties
+src/test/resources/serenity.conf
+bin/
+obj/
+.env*

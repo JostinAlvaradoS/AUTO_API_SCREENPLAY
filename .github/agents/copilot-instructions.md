@@ -30,5 +30,7 @@ Java 17+ (Standard for Serenity): Follow standard conventions
 
 - 001-event-crud-api: Added Java 17+ (Standard for Serenity) + Serenity Screenplay, Serenity Rest, JUnit 5/Cucumber
 
+
+
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->
