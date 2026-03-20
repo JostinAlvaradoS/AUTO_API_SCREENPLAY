@@ -1,23 +1,15 @@
 package com.sofka.automation.runners;
 
-import io.cucumber.junit.platform.engine.Constants;
-import org.junit.platform.suite.api.ConfigurationParameter;
-import org.junit.platform.suite.api.IncludeEngines;
-import org.junit.platform.suite.api.Suite;
+import io.cucumber.junit.CucumberOptions;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
 
-@Suite
-@IncludeEngines("cucumber")
-@ConfigurationParameter(
-        key = Constants.FEATURES_PROPERTY_NAME,
-        value = "shared-specs/specs/001-ticketing-mvp/hu05-admin-config.feature"
-)
-@ConfigurationParameter(
-        key = Constants.GLUE_PROPERTY_NAME,
-        value = "com.sofka.automation.stepdefinitions"
-)
-@ConfigurationParameter(
-        key = Constants.PLUGIN_PROPERTY_NAME,
-        value = "pretty"
+@RunWith(CucumberWithSerenity.class)
+@CucumberOptions(
+	features = "src/test/resources/features/hu05-admin-config.feature",
+	glue = "com.sofka.automation.stepdefinitions",
+	snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class EventRunner {
+
 }

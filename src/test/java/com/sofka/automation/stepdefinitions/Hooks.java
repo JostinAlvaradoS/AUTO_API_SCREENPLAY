@@ -7,23 +7,20 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 import net.thucydides.core.steps.BaseStepListener;
 import net.thucydides.core.steps.StepEventBus;
-import net.thucydides.model.util.EnvironmentVariables;
 import java.io.File;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
 public class Hooks {
-    private EnvironmentVariables environmentVariables;
 
     @Before
     public void setTheStage() {
         OnStage.setTheStage(new OnlineCast());
-        String baseUrl = environmentVariables.optionalProperty("restapi.baseurl")
-                .orElse("http://localhost:50001");
+        String baseUrl = System.getProperty("restapi.baseurl", "http://localhost:50001");
         theActorCalled("The System").can(CallAnApi.at(baseUrl));
         // Register BaseStepListener so Serenity captures Rest requests in reports
         try {
-            File outputDir = new File("build/serenity");
+            File outputDir = new File("target/site/serenity");
             outputDir.mkdirs();
             BaseStepListener baseStepListener = new BaseStepListener(outputDir);
             StepEventBus.getEventBus().registerListener(baseStepListener);

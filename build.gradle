@@ -21,25 +21,30 @@ dependencies {
     implementation "net.serenity-bdd:serenity-screenplay-rest:${serenity_version}"
     implementation "io.rest-assured:rest-assured:5.3.0"
     implementation "io.rest-assured:json-schema-validator:5.3.0"
-    implementation 'org.projectlombok:lombok:1.18.28'
+    
+    compileOnly 'org.projectlombok:lombok:1.18.28'
     annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    testCompileOnly 'org.projectlombok:lombok:1.18.28'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
+    
     testImplementation "junit:junit:4.13.2"
     testImplementation "net.serenity-bdd:serenity-ensure:${serenity_version}"
-    testImplementation "net.serenity-bdd:serenity-junit5:${serenity_version}"
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
-    testImplementation 'org.junit.platform:junit-platform-suite:1.10.0'
-    testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.13.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.13.0'
     testImplementation 'org.slf4j:slf4j-simple:2.0.7'
 }
 
 test {
-    useJUnitPlatform()
-    systemProperty "cucumber.filter.tags", System.getProperty("cucumber.filter.tags")
     testLogging {
-        events "passed", "skipped", "failed"
         showStandardStreams = true
-        exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+        exceptionFormat = 'full'
+        events "failed", "passed", "skipped"
     }
 }
 
+serenity {
+    reports = ["html"]
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

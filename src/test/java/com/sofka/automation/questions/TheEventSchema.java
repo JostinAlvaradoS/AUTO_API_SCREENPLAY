@@ -3,8 +3,6 @@ package com.sofka.automation.questions;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.rest.questions.ResponseConsequence;
 
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-
 public class TheEventSchema implements Question<Boolean> {
 
     private final String schemaPath;
@@ -21,7 +19,7 @@ public class TheEventSchema implements Question<Boolean> {
     public Boolean answeredBy(net.serenitybdd.screenplay.Actor actor) {
         actor.should(
                 ResponseConsequence.seeThatResponse("The event response matches the schema",
-                        response -> response.body(matchesJsonSchemaInClasspath(schemaPath)))
+                        response -> response.body(io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath(schemaPath)))
         );
         return true;
     }
