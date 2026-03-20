@@ -5,9 +5,7 @@ import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
-import net.thucydides.core.steps.BaseStepListener;
-import net.thucydides.core.steps.StepEventBus;
-import java.io.File;
+import net.serenitybdd.core.Serenity;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
@@ -18,17 +16,8 @@ public class Hooks {
         OnStage.setTheStage(new OnlineCast());
         String baseUrl = System.getProperty("restapi.baseurl", "http://localhost:50001");
         theActorCalled("The System").can(CallAnApi.at(baseUrl));
-        // Register BaseStepListener so Serenity captures Rest requests in reports
-        try {
-            File outputDir = new File("target/site/serenity");
-            outputDir.mkdirs();
-            BaseStepListener baseStepListener = new BaseStepListener(outputDir);
-            StepEventBus.getEventBus().registerListener(baseStepListener);
-        } catch (Exception e) {
-            System.err.println("Warning: could not register BaseStepListener: " + e.getMessage());
-        }
-
-        // Enable RestAssured/Serenity request/response logging for validation failures
-        SerenityRest.enableLoggingOfRequestAndResponseIfValidationFails();
+        
+        // Registrar información base en el reporte
+        Serenity.recordReportData().withTitle("Base URL API").andContents(baseUrl);
     }
 }
