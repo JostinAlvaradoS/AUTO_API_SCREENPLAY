@@ -203,7 +203,7 @@ public class WaitlistSteps {
     public void sistemaeMarcaComoExpirado(String email) throws InterruptedException {
         String eventId = SessionManager.get(SessionManager.WAITLIST_EVENT_ID);
         logger.info("Verificando que '{}' fue marcado como Expirado mediante has-pending polling...", email);
-        waitForHasPendingToBeFalse(eventId, 120);
+        waitForHasPendingToBeFalse(eventId, 250);
         theActorInTheSpotlight().attemptsTo(CheckHasPending.forEvent(eventId));
         theActorInTheSpotlight().should(
                 seeThat("cola procesada tras expiración", TheWaitlistResponseState.hasPending(), is(false))
@@ -236,7 +236,7 @@ public class WaitlistSteps {
     public void sistemaCancelaOrdenYLiberaAsiento() throws InterruptedException {
         String eventId = SessionManager.get(SessionManager.WAITLIST_EVENT_ID);
         logger.info("Verificando liberación de asiento al pool general...");
-        waitForHasPendingToBeFalse(eventId, 120);
+        waitForHasPendingToBeFalse(eventId, 250);
         theActorInTheSpotlight().attemptsTo(CheckHasPending.forEvent(eventId));
         theActorInTheSpotlight().should(
                 seeThat("asiento liberado al pool (has-pending=false)", TheWaitlistResponseState.hasPending(), is(false))

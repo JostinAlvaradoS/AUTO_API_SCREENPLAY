@@ -61,6 +61,8 @@ public class WaitlistHooks {
 
         if (needsSoldOut) {
             blockFirstSeat(eventId);
+            // Allow Kafka reservation-created event to propagate to Catalog service
+            try { Thread.sleep(3000); } catch (InterruptedException ignored) {}
         }
 
         SessionManager.set(SessionManager.WAITLIST_EVENT_ID, eventId);
@@ -134,7 +136,7 @@ public class WaitlistHooks {
             if (seatId == null) return;
 
             String customerId = java.util.UUID.randomUUID().toString();
-            String body = String.format("{\"seatId\":\"%s\",\"customerId\":\"%s\"}", seatId, customerId);
+            String body = String.format("{\"seatId\":\"%s\",\"customerId\":\"%s\",\"eventId\":\"%s\"}", seatId, customerId, eventId);
 
             RestAssured.given()
                     .baseUri(INVENTORY_URL)
