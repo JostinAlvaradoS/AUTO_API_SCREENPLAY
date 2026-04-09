@@ -20,16 +20,6 @@ import java.util.List;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
-/**
- * Hooks para los escenarios de Waitlist.
- * Gestiona el ciclo de vida: crear evento de prueba → ejecutar test → limpiar.
- *
- * Escenarios con stock=0 (@RegistroExitoso, @RegistroDuplicado, @AsignacionAutomatica, etc.):
- *   → Crea evento + genera 1 asiento + bloquea ese asiento via Inventory.Api
- *
- * Escenario con stock>0 (@TicketsDisponibles):
- *   → Crea evento + genera 1 asiento SIN bloquear
- */
 public class WaitlistHooks {
 
     private static final Logger logger = LoggerFactory.getLogger(WaitlistHooks.class);
@@ -61,7 +51,7 @@ public class WaitlistHooks {
 
         if (needsSoldOut) {
             blockFirstSeat(eventId);
-            // Allow Kafka reservation-created event to propagate to Catalog service
+            
             try { Thread.sleep(3000); } catch (InterruptedException ignored) {}
         }
 

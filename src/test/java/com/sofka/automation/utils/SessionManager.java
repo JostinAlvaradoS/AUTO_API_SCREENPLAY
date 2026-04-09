@@ -6,7 +6,6 @@ public class SessionManager {
     public static final String EVENT_ID           = "eventId";
     public static final String EVENT_RESPONSE     = "eventResponse";
 
-    // Waitlist session keys
     public static final String WAITLIST_EVENT_ID    = "waitlistEventId";
     public static final String WAITLIST_ENTRY_ID    = "waitlistEntryId";
     public static final String WAITLIST_EMAIL       = "waitlistEmail";
@@ -21,6 +20,6 @@ public class SessionManager {
     }
 
     private SessionManager() {
-        // Utility class
+        
     }
 }

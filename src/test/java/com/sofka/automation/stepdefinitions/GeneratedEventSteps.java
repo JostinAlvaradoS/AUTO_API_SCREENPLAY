@@ -23,7 +23,7 @@ public class GeneratedEventSteps {
 
     @Dado("que el Administrador tiene acceso al servicio de Catálogo")
     public void queElAdministradorTieneAccesoAlServicioDeCatalogo() {
-        // Asumimos que el endpoint está disponible; no-op para tests de integración
+        
     }
 
     @Cuando("crea un nuevo evento con el nombre {string} y precio {double}")

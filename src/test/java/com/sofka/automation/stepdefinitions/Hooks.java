@@ -17,7 +17,6 @@ public class Hooks {
         String baseUrl = System.getProperty("restapi.baseurl", "http://localhost:50001");
         theActorCalled("The System").can(CallAnApi.at(baseUrl));
         
-        // Registrar información base en el reporte
         Serenity.recordReportData().withTitle("Base URL API").andContents(baseUrl);
     }
 }

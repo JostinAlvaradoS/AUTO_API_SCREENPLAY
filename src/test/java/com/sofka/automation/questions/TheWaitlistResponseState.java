@@ -26,6 +26,6 @@ public class TheWaitlistResponseState {
     }
 
     private TheWaitlistResponseState() {
-        // Utility class
+        
     }
 }
