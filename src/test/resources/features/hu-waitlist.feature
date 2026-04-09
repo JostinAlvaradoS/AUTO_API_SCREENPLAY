@@ -9,22 +9,19 @@ Característica: Sistema de Lista de Espera Inteligente
   Escenario: Registro exitoso en lista de espera
     Dado que el evento "Concierto Rock 2026" tiene stock igual a cero
     Cuando el usuario "jostin@example.com" se registra en la lista de espera del evento
-    Entonces el sistema responde 201 Created
-    Y el usuario recibe su posición en la cola
+    Entonces el sistema lo registra correctamente
 
   @TicketsDisponibles
   Escenario: Intento de registro con tickets disponibles
     Dado que el evento "Concierto Rock 2026" tiene tickets disponibles
     Cuando el usuario "jostin@example.com" intenta unirse a la lista de espera del evento
-    Entonces el sistema responde con error 409
-    Y el mensaje indica que hay tickets disponibles
+    Entonces el sistema indica que aún hay tickets disponibles
 
   @RegistroDuplicado
   Escenario: Registro duplicado en la misma lista
     Dado que "jostin@example.com" ya está registrado en la lista del evento "Concierto Rock 2026"
     Cuando el mismo correo intenta registrarse nuevamente para el mismo evento
-    Entonces el sistema responde con error 409
-    Y el mensaje indica que ya está en la lista de espera
+    Entonces el sistema indica que ya está en la lista de espera
 
   @AsignacionAutomatica
   Escenario: Asignación automática al expirar una reserva

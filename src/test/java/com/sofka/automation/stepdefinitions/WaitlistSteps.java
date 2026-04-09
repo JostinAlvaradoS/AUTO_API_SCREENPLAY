@@ -38,8 +38,8 @@ public class WaitlistSteps {
         theActorInTheSpotlight().attemptsTo(JoinWaitlist.withEmail(email, eventId));
     }
 
-    @Entonces("el sistema responde 201 Created")
-    public void sistemaResponde201() {
+    @Entonces("el sistema lo registra correctamente")
+    public void sistemaLoRegistraCorrectamente() {
         theActorInTheSpotlight().should(
                 seeThat("el código de respuesta", TheWaitlistResponseState.code(), equalTo(201))
         );
@@ -47,10 +47,6 @@ public class WaitlistSteps {
         if (entryId != null) {
             SessionManager.set(SessionManager.WAITLIST_ENTRY_ID, entryId);
         }
-    }
-
-    @Y("el usuario recibe su posición en la cola")
-    public void usuarioRecibePosicion() {
         theActorInTheSpotlight().should(
                 seeThat("la posición en la cola", TheWaitlistResponseState.position(), greaterThan(0))
         );
@@ -75,15 +71,11 @@ public class WaitlistSteps {
         theActorInTheSpotlight().attemptsTo(JoinWaitlist.withEmail(email, eventId));
     }
 
-    @Entonces("el sistema responde con error 409")
-    public void sistemaResponde409() {
+    @Entonces("el sistema indica que aún hay tickets disponibles")
+    public void sistemaIndicaQueHayTickets() {
         theActorInTheSpotlight().should(
                 seeThat("el código de respuesta", TheWaitlistResponseState.code(), equalTo(409))
         );
-    }
-
-    @Y("el mensaje indica que hay tickets disponibles")
-    public void mensajeIndicaTicketsDisponibles() {
         theActorInTheSpotlight().should(
                 seeThat("el mensaje de error", TheWaitlistResponseState.errorMessage(),
                         containsStringIgnoringCase("disponibles"))
@@ -113,8 +105,11 @@ public class WaitlistSteps {
         theActorInTheSpotlight().attemptsTo(JoinWaitlist.withEmail(email, eventId));
     }
 
-    @Y("el mensaje indica que ya está en la lista de espera")
-    public void mensajeIndicaYaRegistrado() {
+    @Entonces("el sistema indica que ya está en la lista de espera")
+    public void sistemaIndicaQueYaEstaEnLista() {
+        theActorInTheSpotlight().should(
+                seeThat("el código de respuesta", TheWaitlistResponseState.code(), equalTo(409))
+        );
         theActorInTheSpotlight().should(
                 seeThat("el mensaje de error", TheWaitlistResponseState.errorMessage(),
                         containsStringIgnoringCase("lista de espera"))
