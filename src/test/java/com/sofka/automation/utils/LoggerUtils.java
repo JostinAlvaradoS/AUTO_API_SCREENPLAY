@@ -13,6 +13,6 @@ public class LoggerUtils {
     }
 
     private LoggerUtils() {
-        // Utility class
+        
     }
 }
